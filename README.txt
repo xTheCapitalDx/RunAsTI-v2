@@ -1,4 +1,4 @@
-@1337MAGIQ  --  2025.09.29 -- Hosted by xTheCapitalDx on github.
+@MAGIQ1337  --  2025.09.29 -- Hosted by xTheCapitalDx on github.
 
 
   RunAsTI v2
@@ -24,6 +24,7 @@ How to Use:
 1) Right-click on a supported file/folder type.
 2) Select "Run as trustedinstaller" and proceed through the pop-up windows - select "Yes" and/or "OK" to all.
 3) Enjoy TI privileges! NOTE: If you close out, you will need to re-"Run as trustedinstaller" to gain those privileges again - RunAsTI v2 works for the current session only.
+
 
 
 
