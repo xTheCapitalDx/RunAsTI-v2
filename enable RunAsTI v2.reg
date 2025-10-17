@@ -1,7 +1,7 @@
 Windows Registry Editor Version 5.00
 
 ; Enables "Run as trustedinstaller" in right-click menu
-; Supports: EXE, BAT, CMD, PS1, MSC, REG, DLL, MSI, CAB, MSU, VBS, JS, Folder
+; Supports: EXE, BAT, CMD, PS1, MSC, REG, DLL, MSI, CAB, MSU, VBS, JS, INF, Folder
 ; Windows 10/11 compatible
 
 [-HKEY_CLASSES_ROOT\RunAsTI]
@@ -16,9 +16,10 @@ Windows Registry Editor Version 5.00
 [-HKEY_CLASSES_ROOT\JSFile\shell\RunAsTI]
 [-HKEY_CLASSES_ROOT\VBSFile\shell\RunAsTI]
 [-HKEY_CLASSES_ROOT\CABFolder\shell\RunAsTI]
-[-HKEY_CLASSES_ROOT\MSUFile\shell\RunAsTI]
+[-HKEY_CLASSES_ROOT\Windows.UpdatePackage\shell\RunAsTI]
 [-HKEY_CLASSES_ROOT\Msi.Package\shell\RunAsTI]
 [-HKEY_CLASSES_ROOT\dllfile\shell\RunAsTI]
+[-HKEY_CLASSES_ROOT\inffile\shell\RunAsTI]
 
 [HKEY_CLASSES_ROOT\batfile\shell\RunAsTI]
 "MUIVerb"="Run as trustedinstaller"
@@ -83,11 +84,11 @@ Windows Registry Editor Version 5.00
 [HKEY_CLASSES_ROOT\CABFolder\shell\RunAsTI\command]
 @="C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe -win 1 -nop -c iex((10..40|%%{(gp 'Registry::HKCR\\RunAsTI' $_ -ea 0).$_})-join[char]10); # --%% expand \"%L\" -F:* ."
 
-[HKEY_CLASSES_ROOT\MSUFile\shell\RunAsTI]
+[HKEY_CLASSES_ROOT\Windows.UpdatePackage\shell\RunAsTI]
 "MUIVerb"="Install as trustedinstaller"
 "HasLUAShield"=""
 "Icon"="wusa.exe,0"
-[HKEY_CLASSES_ROOT\MSUFile\shell\RunAsTI\command]
+[HKEY_CLASSES_ROOT\Windows.UpdatePackage\shell\RunAsTI\command]
 @="C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe -win 1 -nop -c iex((10..40|%%{(gp 'Registry::HKCR\\RunAsTI' $_ -ea 0).$_})-join[char]10); # --%% wusa.exe \"%L\" /quiet"
 
 [HKEY_CLASSES_ROOT\Msi.Package\shell\RunAsTI]
@@ -103,6 +104,13 @@ Windows Registry Editor Version 5.00
 "Icon"="shell32.dll,-154"
 [HKEY_CLASSES_ROOT\dllfile\shell\RunAsTI\command]
 @="C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe -win 1 -nop -c iex((10..40|%%{(gp 'Registry::HKCR\\RunAsTI' $_ -ea 0).$_})-join[char]10); # --%% regsvr32.exe \"%L\""
+
+[HKEY_CLASSES_ROOT\inffile\shell\RunAsTI]
+"MUIVerb"="Install as trustedinstaller"
+"HasLUAShield"=""
+"Icon"="setupapi.dll,-15"
+[HKEY_CLASSES_ROOT\inffile\shell\RunAsTI\command]
+@="C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe -win 1 -nop -c iex((10..40|%%{(gp 'Registry::HKCR\\RunAsTI' $_ -ea 0).$_})-join[char]10); # --%% InfDefaultInstall.exe \"%L\""
 
 [HKEY_CLASSES_ROOT\Folder\shell\RunAsTI]
 "MuiVerb"="Open as trustedinstaller"
@@ -153,5 +161,5 @@ Windows Registry Editor Version 5.00
 "37"=" if ($11bug) {[Windows.Forms.SendKeys]::SendWait($path)}; do {sleep 7} while(Q); L '.Default' $LNK 'Interactive User'"
 "38"="'@; $V='';'cmd','arg','id','key'|%{$V+=\"`n`$$_='$($(gv $_ -val)-replace\"'\",\"''\")';\"}; sp $key $id $($V,$code) -type 7 -force -ea 0"
 "39"=" start powershell -args \"-win 1 -nop -c `n$V `$env:R=(gi `$key -ea 0).getvalue(`$id)-join''; iex `$env:R\" -verb runas"
-"40"="}; $A=,([environment]::commandline-split'-[-]%+ ?',2)[1]-split'\"([^\"]+)\"|([^ ]+)',2|%{$_.Trim(' \"')}; RunAsTI $A[1] $A[2]; # MAGIQ1337, 2025.09.29"
+"40"="}; $A=,([environment]::commandline-split'-[-]%+ ?',2)[1]-split'\"([^\"]+)\"|([^ ]+)',2|%{$_.Trim(' \"')}; RunAsTI $A[1] $A[2]; # MAGIQ1337, 2025.10.17"
 ;
