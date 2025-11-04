@@ -8,7 +8,7 @@
 -Based on AveYo's Lean and Mean RunAsTI scripts.
 -Enhanced with new features and support for additional file types.
 -Uses a modified version of the core RunAsTI PowerShell implementation from AveYo's iterations - this one works better and is more effective.
--AV's such as Windows Defender may flag this utility as a threat. In which case, it is a FALSE POSITIVE... RunAsTI v3 does NOT do anything harmful - while it DOES contain obfuscated code and utilizes several techniques which could be interpreted as "suspicious" in order to function, this utility is perfectly safe to use.
+-AV's such as Windows Defender may flag this utility as a threat. In which case, it is a FALSE POSITIVE... RunAsTI v3 does NOT do anything harmful - while it DOES contain obfuscated code and utilizes several techniques which could be interpreted as "suspicious" in order to function, this utility is perfectly safe to use and will not harm your device.
 
 
 Installation:
