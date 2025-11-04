@@ -1,7 +1,7 @@
-@MAGIQ1337  --  2025.10.17 -- Hosted by xTheCapitalDx on github.
+@MAGIQ1337  --  2025.11.03 -- Hosted by xTheCapitalDx on github.
 
 
-  RunAsTI v2
+  RunAsTI v3
 
 
 -Based on AveYo's proven RunAsTI scripts.
@@ -13,17 +13,18 @@
 
 Installation:
 1) Remove current, previous, and/or other versions of this utility from your device.
-2) Double-click "enable RunAsTI v2.reg" and proceed through the pop-up windows - select "Yes" and/or "OK" to all.
-3) RunAsTI v2 is now installed!
+2) Double-click "enable RunAsTI v3.reg" and proceed through the pop-up windows - select "Yes" and/or "OK" to all.
+3) RunAsTI v3 is now installed!
 
 Uninstallation:
-1) Double-click "disable RunAsTI v2.reg" and proceed through the pop-up windows - select "Yes" and/or "OK" to all.
-2) RunAsTI v2 is now uninstalled!
+1) Double-click "disable RunAsTI v3.reg" and proceed through the pop-up windows - select "Yes" and/or "OK" to all.
+2) RunAsTI v3 is now uninstalled!
 
 How to Use:
 1) Right-click on a supported file/folder type.
 2) Select "Run as trustedinstaller" and proceed through the pop-up windows - select "Yes" and/or "OK" to all.
-3) Enjoy TI privileges! NOTE: If you close out, you will need to re-"Run as trustedinstaller" to gain those privileges again - RunAsTI v2 works for the current session only.
+3) Enjoy TI privileges! NOTE: If you close out, you will need to re-"Run as trustedinstaller" to gain those privileges again - RunAsTI v3 works for the current session only.
+
 
 
 
